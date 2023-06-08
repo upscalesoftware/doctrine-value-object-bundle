@@ -25,22 +25,7 @@ use Upscale\DoctrineValueObjectBundle\Attribute\ValueObject;
 use Yokai\DoctrineValueObject\StringValueObject;
 
 #[ValueObject]
-class Phone implements StringValueObject
-{
-    public static function fromValue(string $value): StringValueObject
-    {
-        return new self($value);
-    }
-
-    public function __construct(public readonly string $number)
-    {
-    }
-
-    public function toValue(): string
-    {
-        return $this->number;
-    }
-}
+class Phone implements StringValueObject {...}
 ```
 
 Reference the value object type by an underscore separated short class name:
