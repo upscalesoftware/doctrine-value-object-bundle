@@ -1,0 +1,17 @@
+{
+    "name": "upscale/doctrine-value-object-bundle",
+    "description": "Symfony bundle for yokai/doctrine-value-object",
+    "type": "symfony-bundle",
+    "version": "1.0.0",
+    "license": "Apache-2.0",
+    "require": {
+        "php": "^8.1",
+        "symfony/framework-bundle": "^6.1",
+        "yokai/doctrine-value-object": "^0.0.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Upscale\\DoctrineValueObjectBundle\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+parameters:
+  doctrine_value_object_types: []
+
+services:
+  Yokai\DoctrineValueObject\Doctrine\Types:
+    public: true
+    arguments:
+      $types: '%doctrine_value_object_types%'
