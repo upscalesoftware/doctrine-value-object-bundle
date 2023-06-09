@@ -2,7 +2,7 @@
     "name": "upscale/doctrine-value-object-bundle",
     "description": "Symfony bundle for yokai/doctrine-value-object",
     "type": "symfony-bundle",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "Apache-2.0",
     "require": {
         "php": "^8.1",
