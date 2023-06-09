@@ -1,7 +1,7 @@
 Symfony Bundle for Doctrine Value Object
 ========================================
 
-This library wraps [yokai/doctrine-value-object](https://github.com/yokai-php/doctrine-value-object) in a bundle to simplify its use in Symfony projects.
+This package wraps [yokai/doctrine-value-object](https://github.com/yokai-php/doctrine-value-object) in a bundle to simplify its use in Symfony projects.
 
 **Features:**
 - Zero config setup
@@ -25,7 +25,7 @@ use Upscale\DoctrineValueObjectBundle\Attribute\ValueObject;
 use Yokai\DoctrineValueObject\StringValueObject;
 
 #[ValueObject]
-class Phone implements StringValueObject {...}
+class PhoneNumber implements StringValueObject {...}
 ```
 
 Reference the value object type by an underscore separated short class name:
@@ -33,8 +33,8 @@ Reference the value object type by an underscore separated short class name:
 #[Entity]
 class Person
 {
-    #[Column(type: 'phone')]
-    private Phone $phone;
+    #[Column(type: 'phone_number')]
+    private PhoneNumber $phone;
     
     // ...
 }
@@ -44,16 +44,16 @@ class Person
 
 You can customize the type name, including use a fully-qualified class name, for example:
 ```php
-#[ValueObject(type: Phone::class)]
-class Phone implements StringValueObject {...}
+#[ValueObject(type: PhoneNumber::class)]
+class PhoneNumber implements StringValueObject {...}
 ```
 
 ```php
 #[Entity]
 class Person
 {
-    #[Column(type: Phone::class)]
-    private Phone $phone;
+    #[Column(type: PhoneNumber::class)]
+    private PhoneNumber $phone;
     
     // ...
 }
