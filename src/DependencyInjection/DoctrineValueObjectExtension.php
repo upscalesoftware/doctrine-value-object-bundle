@@ -23,6 +23,7 @@ class DoctrineValueObjectExtension extends Extension
             ValueObject::class,
             static function (ChildDefinition $definition, ValueObject $attribute, \ReflectionClass $class): void {
                 $definition->setShared(false);
+                $definition->addTag('container.excluded');
                 $definition->addTag(DoctrineValueObjectPass::VALUE_OBJECT_TAG, [
                     'type' => $attribute->type ?: Container::underscore($class->getShortName()),
                 ]);
