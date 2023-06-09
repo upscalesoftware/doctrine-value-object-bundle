@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Upscale\DoctrineValueObjectBundle\DependencyInjection;
 
@@ -9,7 +10,7 @@ class DoctrineValueObjectPass implements CompilerPassInterface
 {
     public const VALUE_OBJECT_TAG = 'doctrine_value_object';
 
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         $types = [];
         foreach ($container->findTaggedServiceIds(self::VALUE_OBJECT_TAG, true) as $tags) {

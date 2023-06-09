@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Upscale\DoctrineValueObjectBundle\DependencyInjection;
 
@@ -12,7 +13,7 @@ use Upscale\DoctrineValueObjectBundle\Attribute\ValueObject;
 
 class DoctrineValueObjectExtension extends Extension
 {
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configDir = new FileLocator(__DIR__ . '/../../config');
         $loader = new YamlFileLoader($container, $configDir);
