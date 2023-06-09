@@ -25,7 +25,6 @@ class DoctrineValueObjectExtension extends Extension
                 $definition->setShared(false);
                 $definition->addTag(DoctrineValueObjectPass::VALUE_OBJECT_TAG, [
                     'type' => $attribute->type ?: Container::underscore($class->getShortName()),
-                    'class' => $class->getName(),
                 ]);
             }
         );

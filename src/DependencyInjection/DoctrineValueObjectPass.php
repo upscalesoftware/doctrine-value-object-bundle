@@ -13,8 +13,9 @@ class DoctrineValueObjectPass implements CompilerPassInterface
     public function process(ContainerBuilder $container): void
     {
         $types = [];
-        foreach ($container->findTaggedServiceIds(self::VALUE_OBJECT_TAG, true) as $tags) {
-            foreach ($tags as ['type' => $type, 'class' => $class]) {
+        foreach ($container->findTaggedServiceIds(self::VALUE_OBJECT_TAG, true) as $id => $tags) {
+            $class = $container->getDefinition($id)->getClass();
+            foreach ($tags as ['type' => $type]) {
                 $types[$type] = $class;
             }
         }
